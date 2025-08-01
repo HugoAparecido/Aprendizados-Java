@@ -1,6 +1,8 @@
 package com.fernandakipper.javacourse.carro;
 
-public class Carro {
+import com.fernandakipper.javacourse.pintura.Pintavel;
+
+public class Carro implements Pintavel {
     protected String modelo;
     String cor;
     int ano;
@@ -23,5 +25,50 @@ public class Carro {
 
     protected void teste() {
         System.out.println("Teste");
+    }
+
+    @Override
+    public void aplicarTinta() {
+
+    }
+
+    @Override
+    public String getCor() {
+        return "";
+    }
+
+    @Override
+    public void setCor(String cor) {
+
+    }
+
+    @Override
+    public String getTipo() {
+        return "";
+    }
+
+    @Override
+    public void setTipo(String tipo) {
+
+    }
+
+    @Override
+    public String getMarca() {
+        return "";
+    }
+
+    @Override
+    public void setMarca(String marca) {
+
+    }
+
+    @Override
+    public double getPreco() {
+        return 0;
+    }
+
+    @Override
+    public void setPreco(double preco) {
+
     }
 }

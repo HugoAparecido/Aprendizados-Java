@@ -1,5 +1,7 @@
 package com.fernandakipper.javacourse;
 
+import com.fernandakipper.javacourse.carro.Carro2;
+
 import java.util.*;
 
 public class Main {
@@ -33,6 +35,13 @@ public class Main {
 
         System.out.println(map.get("teste"));*/
 
+        Carro2 sandero = new Carro2("Sandero", "Preto", 2020, "ABC-1234");
+        System.out.println(sandero.ano());
+        System.out.println(sandero.modelo());
+
+        // DTOs => data transfer objects
+        // POJOs => plain old java objects
+
         Queue<String> queue = new LinkedList<>();
         queue.add("Hugo");
         queue.add("Leo");
@@ -44,5 +53,13 @@ public class Main {
         System.out.println("Queue: " + queue);
 
         LinkedList<String> linked = new LinkedList<>();
+
+        // STREAM API
+        // realizar operações funcionaisnas nossas collections (estruturas de dados)
+        // filter, map, reduce, agregações
+        // filter - filtra os elementos de uma coleção
+        // map - transforma os elementos de uma coleção
+        // reduce - reduz os eelementos de uma coleeção a um único elemento
+        // agregações - soma, média, contagem, etc.
     }
 }

@@ -3,19 +3,21 @@ package com.fernandakipper.javacourse;
 import com.fernandakipper.javacourse.carro.Carro2;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        /*System.out.println("Hello World!");
+        System.out.println("Hello World!");
         //Map => estrutura de chave valor
         //Set => não permite duplicatas [1,2,3,4,5]
         //List => List ordenada com elementos duplicados [1,2,3,5,4,4,4]
         //Queue => Filas,usada normalmente para processamento em ordem
         List<String> list = new ArrayList<>();
-        list.add("Hello");
-        list.add("Hugo");
-        list.add("Aparecido");
-        list.add("Hugo");
+        list.add("Ariel Sousa");
+        list.add("Hugo Aparecido");
+        list.add("Hugo Santos");
+        list.add("Hugo Moreira");
+        list.add("Eduardo Moreira");
 
         System.out.println("List: " + list);
 
@@ -33,7 +35,7 @@ public class Main {
         map.put("name", "Hugo");
         map.put("surname", "Aparecido");
 
-        System.out.println(map.get("teste"));*/
+        System.out.println(map.get("teste"));
 
         Carro2 sandero = new Carro2("Sandero", "Preto", 2020, "ABC-1234");
         System.out.println(sandero.ano());
@@ -59,7 +61,15 @@ public class Main {
         // filter, map, reduce, agregações
         // filter - filtra os elementos de uma coleção
         // map - transforma os elementos de uma coleção
-        // reduce - reduz os eelementos de uma coleeção a um único elemento
+        // reduce - reduz os elementos de uma coleção a um único elemento
         // agregações - soma, média, contagem, etc.
+
+        Set<String> hugos = list
+                .stream()
+                .filter(nome -> nome.startsWith("Hugo"))
+                .map(String::toUpperCase)
+                .map(nome -> nome.replaceAll(" ", ""))
+                .collect(Collectors.toSet());
+        System.out.println("Hugos: " + hugos);
     }
 }
